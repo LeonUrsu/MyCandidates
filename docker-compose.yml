@@ -1,0 +1,23 @@
+services:
+  oracle-db:
+    image: gvenzl/oracle-free:23-slim
+    container_name: mycandidates-oracle-db
+    ports:
+      - "1521:1521"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ORACLE_PASSWORD=passwordAdmin123
+      - APP_USER=HR
+      - APP_USER_PASSWORD=passwordHR
+    volumes:
+      - ./database-scripts:/container-entrypoint-initdb.d
+
+  webapp:
+    build: .
+    container_name: mycandidates-web
+    ports:
+      - "8080:8080"
+    depends_on:
+      - oracle-db
+    environment:
+      - ConnectionStrings__OracleDb=User Id=HR;Password=passwordHR;Data Source=oracle-db:1521/FREEPDB1;

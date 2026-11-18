@@ -1,3 +1,7 @@
+ALTER SESSION SET CONTAINER = FREEPDB1;
+
+ALTER SESSION SET CURRENT_SCHEMA = HR;
+
 -- Cancellazione tabella esistente per i candidati
 begin
     execute immediate 'drop table candidates cascade constraints';

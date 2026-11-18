@@ -10,7 +10,7 @@ services:
       - APP_USER=HR
       - APP_USER_PASSWORD=passwordHR
     volumes:
-      - ./database-scripts:/container-entrypoint-initdb.d
+      - ./database_scripts:/container-entrypoint-initdb.d
 
   webapp:
     build: .

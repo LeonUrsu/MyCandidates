@@ -1,3 +1,7 @@
+ALTER SESSION SET CONTAINER = FREEPDB1;
+
+ALTER SESSION SET CURRENT_SCHEMA = HR;
+
 insert into candidates (candidate_id, nome, cognome, email, telefono, citta, disponibilita, note) values (1, 'Leon', 'Ursu', 'leonursu@proton.me', '389 664 4499', 'Macerata', '1', 'neolaureato Junior in Ingegneria Informatica e Automazione');
 
 insert into candidates (candidate_id, nome, cognome, email, telefono, citta, disponibilita, note) values (2, 'Sofia', 'Rossi', 'sofia.rossi@email.it', '3331234567', 'Milano', '3', 'Esperienza biennale nello sviluppo frontend con React e TypeScript.');
